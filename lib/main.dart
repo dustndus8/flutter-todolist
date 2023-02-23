@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todolist/tab_item.dart';
+import 'package:flutter_todolist/todo/todo_list.dart';
 
 void main() {
   runApp(TodoListApp());
@@ -33,6 +34,10 @@ class _TodoListAppState extends State<TodoListApp> {
       home: Scaffold(
         appBar: AppBar(title: Text(_tabItems[_currentTabIndex].getTitle())),
         bottomNavigationBar: _createBottomNavigationBar(),
+        body: Container(
+          padding: EdgeInsets.all(8.0),
+          child: TodoListPage()
+        ),
       ),
     );
   }
